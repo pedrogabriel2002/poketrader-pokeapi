@@ -45,6 +45,7 @@ app.post("/pokemon", async (req,res)=>{
         await trade.save()
         res.redirect('index.html')
     } catch (e) {
+        res.status(400).redirect('index.html')
         console.log('Error:', e)
     }
 })
