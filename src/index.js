@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
     extended:true
 }))
 
-const MONGODB_CNSTRING = 'mongodb+srv://pgsilva2002:tvzzmKF67uiLxQ4o@cluster0.nsscd.mongodb.net/tradeHistory?retryWrites=true&w=majority'
+const MONGODB_CNSTRING = process.env.MONGODB_CNSTRING;
 const port = process.env.PORT
 
 mongoose.connect(MONGODB_CNSTRING,{
