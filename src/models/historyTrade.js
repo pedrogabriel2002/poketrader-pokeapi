@@ -2,11 +2,11 @@ const mongoose = require('mongoose')
 
 const tradeSchema = new mongoose.Schema({
     myPoke: {
-        type: [],
+        type: String,
         required: true,
     },
     yourPoke: {
-        type: [],  
+        type: String,  
         required: true,
     }
 

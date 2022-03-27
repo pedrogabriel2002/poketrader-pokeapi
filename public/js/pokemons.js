@@ -1,16 +1,14 @@
 const myPokemons = []
 const yourPokemons = []
 
-const addMyPokemon = ({pokemonName, pokemonXP}) => {
-    const myPokemon = {pokemonName, pokemonXP}
-    myPokemons.push(myPokemon)
-    return { myPokemon }
+const addMyPokemon = (pokemonName) => {
+    myPokemons.push(pokemonName)
+    return myPokemons
 }
 
-const addYourPokemon = ({pokemonName, pokemonXP}) => {
-    const yourPokemon = {pokemonName, pokemonXP}
-    yourPokemons.push(yourPokemon)
-    return { yourPokemon }
+const addYourPokemon = (pokemonName) => {
+    yourPokemons.push(pokemonName)
+    return yourPokemons
 }
 
 const showMyPokemons = () => {
@@ -19,22 +17,6 @@ const showMyPokemons = () => {
 
 const showYourPokemons = () => {
     return yourPokemons.length
-}
-
-const getMyTotalXP = () => {
-    let sum = 0
-    for (let index = 0; index < myPokemons.length; index++) {
-        sum += myPokemons[index].pokemonXP;
-    }
-    return sum
-}
-
-const getYourTotalXP = () => {
-    let sum = 0
-    for (let index = 0; index < yourPokemons.length; index++) {
-        sum += yourPokemons[index].pokemonXP;
-    }
-    return sum
 }
 
 const deleteAll = () => {

@@ -1,3 +1,6 @@
+var myXP = 0
+var yourXP = 0
+
 const formOne = document.querySelector('#form-one')
 const formTwo = document.querySelector('#form-two')
 const submit = document.querySelector('#submit')
@@ -19,7 +22,7 @@ const playerTwoXP = document.querySelector('#player-two')
 const pokemonTemplate = document.querySelector('#pokemonTemplate').innerHTML
 
 function toCompareXP() {
-    let compare = getMyTotalXP() - getYourTotalXP()
+    let compare = myXP - yourXP
     if (Math.sign(compare) == -1) {
         compare = compare * -1;
         if (compare > 80){
@@ -47,15 +50,15 @@ formOne.addEventListener('submit', (e) => {
                 if (showMyPokemons() === 6) {
                     return alert('Quantidade Máxima de Pokémons Alcançada')
                 }
-                addMyPokemon({pokemonName: data.name, pokemonXP: data.base_experience, pokemonSprite: data.sprites.front_default})
+                addMyPokemon(data.name)
                 const html = Mustache.render(pokemonTemplate, {
                     pokemonName: data.name,
                     pokemonXP: data.base_experience,
                     pokemonSprite: data.sprites.front_default
                 })
-
-                myPoke.value = JSON.stringify(myPokemons)
-                playerOneXP.textContent = 'Experiência Total: ' + getMyTotalXP()
+                myXP += data.base_experience
+                myPoke.value = myPokemons.toString()
+                playerOneXP.textContent = 'Experiência Total: ' + myXP
 
                 base.insertAdjacentHTML('beforeend', html)
             }
@@ -76,15 +79,15 @@ formTwo.addEventListener('submit', (e) => {
                 if (showYourPokemons() === 6) {
                     return alert('Quantidade Máxima de Pokémons Alcançada')
                 } 
-                addYourPokemon({pokemonName: data.name, pokemonXP: data.base_experience, pokemonSprite: data.sprites.front_default})
+                addYourPokemon(data.name)
                 const html = Mustache.render(pokemonTemplate, {
                     pokemonName: data.name,
                     pokemonXP: data.base_experience,
                     pokemonSprite: data.sprites.front_default
                 })
-
-                yourPoke.value = JSON.stringify(yourPokemons)
-                playerTwoXP.textContent = 'Experiência Total: ' + getYourTotalXP()
+                yourXP += data.base_experience
+                yourPoke.value = yourPokemons.toString()
+                playerTwoXP.textContent = 'Experiência Total: ' + yourXP
 
                 baseTwo.insertAdjacentHTML('beforeend', html)
             }
@@ -102,6 +105,9 @@ function removeAll() {
 
     myPoke.value = ''
     yourPoke.value = ''
+
+    myXP = 0
+    yourXP = 0
 
     playerOneXP.textContent = 'Experiência Total: 0'
     playerTwoXP.textContent = 'Experiência Total: 0'
