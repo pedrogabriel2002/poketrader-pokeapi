@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/pokeball.png">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>PokeTrader</title>
+</head>
+
+<body>
+    <header>
+        <form class="space-between" action="/pokemon" method="POST" onsubmit="required()">
+            <input type="hidden" class="box" id="myPoke" name="myPoke" required/>
+            <input type="hidden" class="box" id="yourPoke" name="yourPoke" required/>
+            <input class="btn-pages" type="submit" value="Fazer a troca" id="submit" />
+        </form>
+        <button class="btn-pages" onclick="toCompareXP()">Avaliar a Troca</button>
+        <button class="btn-pages"><a href="/historic">Histórico</a></button>
+        <button class="btn-pages" onclick="removeAll()">Limpar</button>
+    </header>
+    <div class="left-div">
+        <form class="pkn-search" id="form-one" action="/">
+            <label>Nome do Pokémon</label>
+            <input id="pokemon-one" type="text" name="pokename" placeholder="Ex: Bulbasaur(ID=1)">
+            <button class="btn-pages" id="btn-add">Adicionar</button>
+        </form>
+        <p id="player-one">Experiência Total: 0</p>
+        <div id="base"></div>
+    </div>
+
+    <div class="right-div">
+        <form class="pkn-search" id="form-two" action="/">
+            <label>Nome do Pokémon</label>
+            <input id="pokemon-two" type="text" name="pokename" placeholder="Ex: Bulbasaur(ID=1)">
+            <button class="btn-pages" id="btn-add-two">Adicionar</button>
+        </form>
+        <p id="player-two">Experiência Total: 0</p>
+        <div id="base-two"></div>
+    <div>
+    <script id="pokemonTemplate" type="text/html">
+        <div class="pokemonInfo">
+            <img src="{{pokemonSprite}}">
+            <p>Nome do Pokémon: {{pokemonName}} ({{pokemonXP}} exp.)</p>
+        </div>
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/pokemons.js"></script>
+</body>
+
+</html>
