@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 const MONGODB_CNSTRING = process.env.MONGODB_CNSTRING;
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 mongoose.connect(MONGODB_CNSTRING,{
     useNewUrlParser: true,
