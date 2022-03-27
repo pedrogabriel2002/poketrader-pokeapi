@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const ejs = require('ejs')
 const Trade = require('./models/historyTrade.js')
 const app = express()
-dotenv.config({path: './.env'})
+dotenv.config()
 
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
     extended:true
 }))
 
-const MONGODB_CNSTRING = process.env.MONGODB_CNSTRING;
+const MONGODB_CNSTRING = 'mongodb+srv://pgsilva2002:tvzzmKF67uiLxQ4o@cluster0.nsscd.mongodb.net/tradeHistory?retryWrites=true&w=majority'
 const port = process.env.PORT
 
 mongoose.connect(MONGODB_CNSTRING,{
