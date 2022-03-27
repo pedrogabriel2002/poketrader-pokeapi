@@ -96,7 +96,9 @@ formTwo.addEventListener('submit', (e) => {
 })
 
 function required() {
-    if (myPoke.value == "" && yourPoke.value == "") return alert('É necessário ao menos um pokémon envolvido na troca');
+    if (myPoke.value == "" && yourPoke.value == "") {
+        alert('É necessário ao menos um pokémon envolvido na troca');
+    }
 }
 
 function removeAll() {
