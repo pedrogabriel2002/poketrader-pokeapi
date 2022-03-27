@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const ejs = require('ejs')
 const Trade = require('./models/historyTrade.js')
 const app = express()
-dotenv.config()
+dotenv.config({path: './.env'})
 
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
