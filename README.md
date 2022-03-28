@@ -7,6 +7,8 @@
 
 [mais sobre...](https://github.com/pedrogabriel2002/poketrader-pokeapi/blob/main/src/models/historyTrade.js)
 
+____
+
 ## Métodos
 
 - ### Cadastro da troca de pokémon(create trade)
@@ -19,4 +21,31 @@
  
 | Method     | URI                               | File                         | View                      |
 |------------|-----------------------------------|------------------------------|---------------------------|
-| `POST` | `/historic`                           | [`src\index.js`](https://github.com/pedrogabriel2002/poketrader-pokeapi/blob/main/src/index.js)     | [`src/views/historic.ejs`](https://github.com/pedrogabriel2002/poketrader-pokeapi/blob/main/src/views/historic.ejs)    |
+| `GET` | `/historic`                           | [`src\index.js`](https://github.com/pedrogabriel2002/poketrader-pokeapi/blob/main/src/index.js)     | [`src/views/historic.ejs`](https://github.com/pedrogabriel2002/poketrader-pokeapi/blob/main/src/views/historic.ejs)    |
+
+____
+
+## Regras
+
+- Deve haver pelo menos UM pokémon em cada lado da troca
+
+____
+
+## FAQs
+- Como adicionar uma troca na base de dados?
+  - Vá para pagina inicial
+  - Insira os pokémons que deseja trocar
+  - Clique no botão `Fazer a troca`
+- Como ver as trocas feitas?
+  - Na página inicial clique no botão `Histórico`
+  - Você será redirecionado para /historic e lá estarão as trocas
+
+____
+
+## Ferramentas usadas:
+  - [Mongoose](https://www.npmjs.com/package/mongoose)
+  - [MongoDB](https://www.npmjs.com/package/mongodb)
+  - [nodemon](https://www.npmjs.com/package/nodemon)
+  - [Expressjs](https://www.npmjs.com/package/express)
+  - [ejs](https://www.npmjs.com/package/ejs)
+  - [dotenv](https://www.npmjs.com/package/dotenv)
