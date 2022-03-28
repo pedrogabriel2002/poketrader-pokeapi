@@ -47,7 +47,7 @@ formOne.addEventListener('submit', (e) => {
             if (data.error) {
                 alert(data.error)
             } else {
-                if (showMyPokemons() === 6) {
+                if (myPokemons.length === 6) {
                     return alert('Quantidade Máxima de Pokémons Alcançada')
                 }
                 addMyPokemon(data.name)
@@ -76,7 +76,7 @@ formTwo.addEventListener('submit', (e) => {
             if (data.error) {
                 alert(data.error)
             } else {
-                if (showYourPokemons() === 6) {
+                if (yourPokemons.length === 6) {
                     return alert('Quantidade Máxima de Pokémons Alcançada')
                 } 
                 addYourPokemon(data.name)
@@ -96,7 +96,7 @@ formTwo.addEventListener('submit', (e) => {
 })
 
 function required() {
-    if (myPoke.value == "" && yourPoke.value == "") {
+    if (myPoke.value == "" || yourPoke.value == "") {
         alert('É necessário ao menos um pokémon envolvido na troca');
     }
 }

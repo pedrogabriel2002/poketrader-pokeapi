@@ -17,18 +17,10 @@
             <%results.forEach(result => {%>
                 <li>Troca Nº:<%= n+=1 %></li>
                 <ul>
-                    <% if (result.myPoke == '') { %>
-                        <li>Player 1: Não há pokémons.</li>
-                        <%} else { %>
                         <li>Player 1: <%=result.myPoke%></li>
-                        <% } %>
                 </ul>
                 <ul>
-                    <% if (result.yourPoke == '') { %>
-                        <li>Player 2: Não há pokémons.</li>
-                        <%} else { %>
                         <li>Player 2: <%= result.yourPoke%></li>
-                        <% } %>
                 </ul>
             <%})%>
         </ul>

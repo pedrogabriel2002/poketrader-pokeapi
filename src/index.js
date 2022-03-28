@@ -32,7 +32,7 @@ app.post("/pokemon", async (req,res)=>{
     const myPoke = req.body.myPoke;
     const yourPoke = req.body.yourPoke;
 
-    if (!myPoke && !yourPoke) {
+    if (!myPoke || !yourPoke) {
         return res.redirect('index.html')
     }
 
