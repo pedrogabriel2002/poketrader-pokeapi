@@ -1,5 +1,7 @@
 # poketrader-pokeapi
 
+- Trocas de pokémon
+
 ## Modelo
 - `id`: Numero de indentificação único(gerado auto pelo MongoBD Atlas);
 - `myPoke`: _String_ Referenciando os pokemons do jogador número 1 usados na troca;
