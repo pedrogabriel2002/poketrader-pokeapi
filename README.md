@@ -1,6 +1,6 @@
 # poketrader-pokeapi
 
-- Trocas de pokémon
+- Trocas de pokémon usando a [pokeapi](https://pokeapi.co)
 
 ## Modelo
 - `id`: Numero de indentificação único(gerado auto pelo MongoBD Atlas);
